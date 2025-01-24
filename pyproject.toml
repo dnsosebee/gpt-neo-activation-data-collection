@@ -6,7 +6,13 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "datasets>=3.2.0",
+    "matplotlib>=3.10.0",
     "numpy>=2.2.2",
+    "seaborn>=0.13.2",
     "torch>=2.5.1",
     "transformers>=4.48.1",
 ]
+
+[project.scripts]
+train = "scripts.train_autoencoder:main"
+collect = "scripts.collect_activations:main"

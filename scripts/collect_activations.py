@@ -5,7 +5,7 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, GPTNeoForCausalLM
 
-from ..data_io import save_activation_data
+from ..src.data_io import save_activation_data
 
 
 def setup_model() -> Tuple[GPTNeoForCausalLM, AutoTokenizer, str]:
@@ -105,7 +105,7 @@ def main():
     
     # Collect activations
     print("\nCollecting activations...")
-    activations, tokens, texts = collect_activations(model, tokenizer, device, num_examples=10_000, sequence_length=128)
+    activations, tokens, texts = collect_activations(model, tokenizer, device, num_examples=10, sequence_length=128)
 
     # Save activations
     save_activation_data(
@@ -113,7 +113,7 @@ def main():
         tokens=tokens,
         texts=texts,
         save_dir="data/activations",
-        batch_name="ag_news_batch2"
+        batch_name="ag_news_batch_test"
     )
 
     # print(f"Activations: {activations}")

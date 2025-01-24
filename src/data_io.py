@@ -40,7 +40,7 @@ def save_activation_data(
 
 def load_activation_data(
     load_dir: str = "data/activations",
-    batch_name: str = "batch_1"
+    batch_name: str = "ag_news_batch1"
 ) -> Dict[str, Any]:
     """Load activation data and metadata from files."""
     load_dir_path = Path(load_dir)
